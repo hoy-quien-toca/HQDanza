@@ -13,7 +13,7 @@ const DEPARTAMENTOS = [
 ];
 
 const GENEROS = [
-  "CONTEMPORANEA", "DANZA CLASICA", "FLAMENCO", "FOLKLORE", "MILONGA", "TANGO", "OTROS"
+  "CONTEMPORANEA", "DANZA CLASICA", "FLAMENCO", "FOLKLORE", "MALAMBO", "MILONGA", "TANGO", "OTROS"
 ];
 
 export default function SubmitEvent() {
@@ -253,8 +253,5 @@ export default function SubmitEvent() {
         )}
       </main>
     </div>
-  );
-}
->
   );
 }
