@@ -188,7 +188,7 @@ export default function SubmitEvent() {
               </div>
 
               <div className="space-y-2 font-black">
-                <label className="text-xs text-green-600 font-black">Género</label>
+                <label className="text-xs text-green-600 font-black">Estilo</label>
                 <select required name="genre" className="w-full bg-zinc-900 border-4 border-white p-4 rounded-3xl focus:border-green-600 outline-none uppercase font-black">
                   {GENEROS.map(g => <option key={g} value={g}>{g}</option>)}
                 </select>
@@ -253,5 +253,8 @@ export default function SubmitEvent() {
         )}
       </main>
     </div>
+  );
+}
+>
   );
 }

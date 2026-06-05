@@ -286,7 +286,7 @@ export default function Home() {
                 </select>
               </div>
               <div className="flex flex-col gap-1">
-                <span className="text-[8px] md:text-[10px] opacity-80 uppercase font-black">Género</span>
+                <span className="text-[8px] md:text-[10px] opacity-80 uppercase font-black">Estilo</span>
                 <select value={genre} onChange={(e) => { setGenre(e.target.value); applyFilters(allEvents, department, e.target.value, ageRating, priceType); }} className="bg-black text-white p-2 border-2 border-white focus:outline-none font-bold text-[10px] md:text-xs uppercase rounded-xl font-black">
                   <option value="">Todos</option>
                   {activeGenres.map(g => <option key={g} value={g}>{g}</option>)}
