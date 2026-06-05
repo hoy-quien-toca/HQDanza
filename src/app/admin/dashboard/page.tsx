@@ -132,7 +132,7 @@ export default function AdminDashboard() {
   async function toggleInterviewFeatured(id: string, current: boolean) { await supabase.from('interviews').update({ is_featured: !current }).eq('id', id); fetchData(); }
   async function toggleSponsorStatus(id: string, current: boolean) { await supabase.from('sponsors').update({ is_active: !current }).eq('id', id); fetchData(); }
 
-  if (loading) return <div className="min-h-screen bg-black text-red-600 flex items-center justify-center font-black text-2xl uppercase italic">Cargando Admin...</div>;
+  if (loading) return <div className="min-h-screen bg-black text-green-600 flex items-center justify-center font-black text-2xl uppercase italic">Cargando Admin...</div>;
 
   const today = new Date().toISOString().split('T')[0];
   const pendingEvents = events.filter((e) => !e.is_approved);
@@ -146,18 +146,18 @@ export default function AdminDashboard() {
         key={ev.id}
         className={`border-4 p-2.5 sm:p-3 rounded-2xl ${
           isPending
-            ? 'border-red-600 bg-red-950/40 admin-pending-card'
-            : 'border-red-600 bg-zinc-950/80'
+            ? 'border-green-600 bg-green-950/40 admin-pending-card'
+            : 'border-green-600 bg-zinc-950/80'
         }`}
       >
         {isPending && (
-          <p className="text-center text-[9px] sm:text-[10px] font-black uppercase tracking-widest text-red-500 animate-pulse mb-2">
+          <p className="text-center text-[9px] sm:text-[10px] font-black uppercase tracking-widest text-green-500 animate-pulse mb-2">
             ⚠ Pendiente
           </p>
         )}
         <div className="flex gap-2 sm:gap-3">
           <img
-            src={ev.flyer_url || '/logo-rojo.jpg'}
+            src={ev.flyer_url || '/logo-azul.jpg'}
             alt={ev.band_name}
             className="w-[6.65rem] h-[8.05rem] sm:w-28 sm:h-[8.4rem] object-cover border-2 border-white rounded-lg flex-shrink-0 self-start"
           />
@@ -170,7 +170,7 @@ export default function AdminDashboard() {
                 <button type="button" onClick={() => deleteEvent(ev.id)} className={`${adminBtn} bg-red-600 border-white`}>BORRAR</button>
               </div>
             </div>
-            <p className="text-[10px] sm:text-xs font-bold text-red-600 uppercase line-clamp-2 flex-shrink-0">
+            <p className="text-[10px] sm:text-xs font-bold text-green-600 uppercase line-clamp-2 flex-shrink-0">
               {ev.date} — {ev.time?.substring(0, 5)} hs · {ev.venue}
             </p>
             <div className="flex flex-col gap-1 sm:gap-1.5 flex-1 justify-between min-h-0">
@@ -178,7 +178,7 @@ export default function AdminDashboard() {
                 type="button"
                 onClick={() => toggleFeatured(ev.id, ev.is_featured)}
                 title="Carrusel destacado arriba en la portada"
-                className={`${adminBar} flex-1 ${ev.is_featured ? 'bg-red-600 border-white text-white' : 'bg-transparent border-red-600 text-red-600'}`}
+                className={`${adminBar} flex-1 ${ev.is_featured ? 'bg-green-600 border-white text-white' : 'bg-transparent border-green-600 text-green-600'}`}
               >
                 BANNER
               </button>
@@ -200,17 +200,17 @@ export default function AdminDashboard() {
 
   return (
     <div className="min-h-screen bg-zinc-900 text-white p-3 sm:p-4 md:p-6 font-sans relative text-left overflow-x-hidden font-black">
-      <header className="flex flex-col sm:flex-row justify-between items-stretch sm:items-center mb-4 sm:mb-6 border-b-4 border-red-600 pb-4 sm:pb-6 bg-zinc-950 p-3 sm:p-4 sticky top-0 z-50 gap-3">
-        <div><h1 className="text-xl sm:text-3xl md:text-4xl font-black uppercase italic text-red-600 leading-none">ADMINISTRADOR HQT</h1></div>
-        <div className="flex gap-2 sm:gap-4"><button onClick={() => router.push('/')} className="flex-1 sm:flex-none bg-white text-black px-4 py-2 font-black uppercase text-xs rounded-full">Web</button><button onClick={() => supabase.auth.signOut().then(() => router.push('/admin'))} className="flex-1 sm:flex-none bg-red-600 px-4 py-2 font-black uppercase text-xs rounded-full">Salir</button></div>
+      <header className="flex flex-col sm:flex-row justify-between items-stretch sm:items-center mb-4 sm:mb-6 border-b-4 border-green-600 pb-4 sm:pb-6 bg-zinc-950 p-3 sm:p-4 sticky top-0 z-50 gap-3">
+        <div><h1 className="text-xl sm:text-3xl md:text-4xl font-black uppercase italic text-green-600 leading-none">ADMINISTRADOR HQDanza</h1></div>
+        <div className="flex gap-2 sm:gap-4"><button onClick={() => router.push('/')} className="flex-1 sm:flex-none bg-white text-black px-4 py-2 font-black uppercase text-xs rounded-full">Web</button><button onClick={() => supabase.auth.signOut().then(() => router.push('/admin'))} className="flex-1 sm:flex-none bg-green-600 px-4 py-2 font-black uppercase text-xs rounded-full">Salir</button></div>
       </header>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-10">
         {/* IZQUIERDA: FECHAS */}
         <section className="space-y-4 sm:space-y-6">
-          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 bg-zinc-950 p-3 sm:p-4 border-l-8 border-red-600 rounded-r-2xl font-black">
-             <h2 className="text-xl sm:text-2xl uppercase italic text-red-600 font-franklin">Fechas</h2>
-             <button onClick={() => setEditingEvent({ id: 'new', band_name: '', venue: '', address: '', city: '', department: 'MONTEVIDEO', date: '', time: '21:00', age_rating: 'ATP', description: '', is_approved: false, price_type: 'range', genre: 'ROCK', flyer_url: '', price_min: '', price_max: '', ticket_type: 'link', ticket_contact: '' })} className="w-full sm:w-auto bg-red-600 text-white px-4 sm:px-6 py-2 text-[10px] font-black uppercase rounded-full border-2 border-white">+ NUEVA FECHA</button>
+          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 bg-zinc-950 p-3 sm:p-4 border-l-8 border-green-600 rounded-r-2xl font-black">
+             <h2 className="text-xl sm:text-2xl uppercase italic text-green-600 font-franklin">Fechas</h2>
+             <button onClick={() => setEditingEvent({ id: 'new', band_name: '', venue: '', address: '', city: '', department: 'MONTEVIDEO', date: '', time: '21:00', age_rating: 'ATP', description: '', is_approved: false, price_type: 'range', genre: 'ROCK', flyer_url: '', price_min: '', price_max: '', ticket_type: 'link', ticket_contact: '' })} className="w-full sm:w-auto bg-green-600 text-white px-4 sm:px-6 py-2 text-[10px] font-black uppercase rounded-full border-2 border-white">+ NUEVA FECHA</button>
           </div>
           
           {editingEvent && (
@@ -259,8 +259,8 @@ export default function AdminDashboard() {
           <div className="flex flex-col gap-3 sm:gap-4 pb-6">
             {pendingEvents.length > 0 && (
               <div className="flex flex-col gap-4">
-                <div className="border-2 border-red-600 bg-red-600/20 rounded-2xl px-4 py-2 text-center admin-pending-banner">
-                  <p className="text-sm font-black uppercase text-red-500 tracking-widest">
+                <div className="border-2 border-green-600 bg-green-600/20 rounded-2xl px-4 py-2 text-center admin-pending-banner">
+                  <p className="text-sm font-black uppercase text-green-500 tracking-widest">
                     Por aprobar ({pendingEvents.length})
                   </p>
                 </div>
@@ -294,11 +294,11 @@ export default function AdminDashboard() {
         <section className="space-y-8 sm:space-y-12">
           {/* MENSAJES */}
           <div className="space-y-4 sm:space-y-6">
-            <h2 className="text-xl sm:text-2xl uppercase italic text-red-600 border-l-8 border-red-600 pl-3 sm:pl-4 bg-zinc-950 py-2 font-franklin">Mensajes</h2>
+            <h2 className="text-xl sm:text-2xl uppercase italic text-green-600 border-l-8 border-green-600 pl-3 sm:pl-4 bg-zinc-950 py-2 font-franklin">Mensajes</h2>
             <div className="space-y-2 sm:space-y-3 font-black">
               {messages.map((m) => (
                 <div key={m.id} className="border-2 p-2.5 sm:p-3 flex justify-between items-center gap-2 border-white bg-zinc-900 rounded-2xl">
-                  <div onClick={() => setSelectedMessage(m)} className="cursor-pointer flex-1 min-w-0 truncate pr-2"><h3 className="uppercase text-[10px] sm:text-xs text-red-600">{m.name}</h3><p className="text-[9px] sm:text-[10px] text-zinc-300 truncate">"{m.message}"</p></div>
+                  <div onClick={() => setSelectedMessage(m)} className="cursor-pointer flex-1 min-w-0 truncate pr-2"><h3 className="uppercase text-[10px] sm:text-xs text-green-600">{m.name}</h3><p className="text-[9px] sm:text-[10px] text-zinc-300 truncate">"{m.message}"</p></div>
                   <div className="flex flex-shrink-0 gap-2">
                     <button type="button" onClick={() => setSelectedMessage(m)} className={`${adminBtn} bg-blue-600 border-white`}>VER</button>
                     <button type="button" onClick={() => deleteMessage(m.id)} className={`${adminBtn} bg-red-600 border-white`}>BORRAR</button>
@@ -310,30 +310,30 @@ export default function AdminDashboard() {
 
           {/* PUBLICIDAD */}
           <div className="space-y-4 sm:space-y-6 border-t-4 border-zinc-800 pt-6 sm:pt-8">
-            <h2 className="text-xl sm:text-2xl uppercase italic text-red-600 border-l-8 border-red-600 pl-3 sm:pl-4 bg-zinc-950 py-2 font-franklin">Publicidad</h2>
+            <h2 className="text-xl sm:text-2xl uppercase italic text-green-600 border-l-8 border-green-600 pl-3 sm:pl-4 bg-zinc-950 py-2 font-franklin">Publicidad</h2>
             <form onSubmit={handleSaveSponsor} className="bg-zinc-950 p-4 border-4 border-white space-y-4 rounded-[32px] font-black">
               <input placeholder="Nombre Cliente" className="w-full bg-black border-2 border-white p-2 uppercase text-xs rounded-xl" value={newSponsor.client_name} onChange={e => setNewSponsor({...newSponsor, client_name: e.target.value})} required />
               <input placeholder="Link Web" className="w-full bg-black border-2 border-white p-2 text-xs rounded-xl" value={newSponsor.link} onChange={e => setNewSponsor({...newSponsor, link: e.target.value})} />
               <div className="grid grid-cols-2 gap-2"><select value={newSponsor.position} onChange={e => setNewSponsor({...newSponsor, position: e.target.value})} className="bg-black border-2 border-white p-2 text-xs rounded-xl"><option value="top">BANNER SUPERIOR</option><option value="sidebar">LATERAL</option><option value="bottom">INFERIOR</option></select><input type="number" placeholder="Orden" value={newSponsor.display_order} onChange={e => setNewSponsor({...newSponsor, display_order: parseInt(e.target.value) || 0})} className="bg-black border-2 border-white p-2 text-xs rounded-xl" /></div>
               <div className="flex gap-4 items-center border-2 border-dashed border-zinc-700 p-2 relative rounded-xl font-black font-black"><p className="text-[10px] uppercase text-zinc-500 flex-1 font-black">{uploading ? '...' : (newSponsor.image_url ? 'Imagen OK ✅' : 'Subir Imagen')}</p><input type="file" className="absolute inset-0 opacity-0" onChange={async (e) => { const f = e.target.files?.[0]; if (f) { const u = await handleFileUpload(f, 'sponsors'); if (u) setNewSponsor({...newSponsor, image_url: u}); } }} /></div>
-              <button type="submit" disabled={uploading} className="w-full bg-red-600 py-2 text-xs border-2 border-white rounded-full font-black">GUARDAR</button>
+              <button type="submit" disabled={uploading} className="w-full bg-green-600 py-2 text-xs border-2 border-white rounded-full font-black">GUARDAR</button>
             </form>
             <div className="space-y-2 sm:space-y-3">
               {sponsors.map(sp => (
                 <div
                   key={sp.id}
                   className={`border-4 p-2.5 sm:p-3 flex gap-2 sm:gap-3 rounded-2xl ${
-                    sp.is_active ? 'border-red-600 bg-zinc-950' : 'border-zinc-800 opacity-60 bg-zinc-900'
+                    sp.is_active ? 'border-green-600 bg-zinc-950' : 'border-zinc-800 opacity-60 bg-zinc-900'
                   }`}
                 >
                   <img
-                    src={sp.image_url || '/logo-rojo.jpg'}
+                    src={sp.image_url || '/logo-azul.jpg'}
                     alt={sp.client_name}
                     className="w-14 h-14 sm:w-16 sm:h-16 object-contain bg-black border-2 border-white rounded-lg flex-shrink-0"
                   />
                   <div className="min-w-0 flex-1">
                     <h3 className="text-sm sm:text-base font-black uppercase leading-tight truncate">{sp.client_name}</h3>
-                    <p className="text-[10px] sm:text-xs font-bold text-red-600 uppercase mt-0.5">
+                    <p className="text-[10px] sm:text-xs font-bold text-green-600 uppercase mt-0.5">
                       {sponsorPositionLabel(sp.position)} · Ord. {sp.display_order}
                     </p>
                     {sp.link && (
@@ -352,7 +352,7 @@ export default function AdminDashboard() {
 
           {/* ENTREVISTAS */}
           <div className="space-y-4 sm:space-y-6 border-t-4 border-zinc-800 pt-6 sm:pt-8">
-            <h2 className="text-xl sm:text-2xl uppercase italic text-red-600 border-l-8 border-red-600 pl-3 sm:pl-4 bg-zinc-950 py-2 font-franklin font-black">Entrevistas</h2>
+            <h2 className="text-xl sm:text-2xl uppercase italic text-green-600 border-l-8 border-green-600 pl-3 sm:pl-4 bg-zinc-950 py-2 font-franklin font-black">Entrevistas</h2>
             <form onSubmit={handleSaveInterview} className="bg-zinc-950 p-4 border-4 border-white space-y-4 rounded-[32px] font-black">
               <input placeholder="Banda / Artista" className="w-full bg-black border-2 border-white p-2 uppercase text-xs rounded-xl" value={newInterview.band_name} onChange={e => setNewInterview({...newInterview, band_name: e.target.value})} required />
               <input placeholder="Título de la nota" className="w-full bg-black border-2 border-white p-2 uppercase text-xs rounded-xl" value={newInterview.title} onChange={e => setNewInterview({...newInterview, title: e.target.value})} required />
@@ -360,7 +360,7 @@ export default function AdminDashboard() {
               <div className="grid grid-cols-2 gap-2"><input placeholder="Créditos Nota" className="bg-black border-2 border-white p-2 text-xs rounded-xl" value={newInterview.author} onChange={e => setNewInterview({...newInterview, author: e.target.value})} /><input placeholder="Créditos Foto" className="bg-black border-2 border-white p-2 text-xs rounded-xl" value={newInterview.photo_credit} onChange={e => setNewInterview({...newInterview, photo_credit: e.target.value})} /></div>
               <div className="flex gap-4 items-center border-2 border-dashed border-zinc-700 p-2 relative rounded-xl font-black"><p className="text-[10px] uppercase text-zinc-500 flex-1">{uploading ? '...' : (newInterview.image_url ? 'Imagen OK ✅' : 'Subir Foto')}</p><input type="file" className="absolute inset-0 opacity-0" onChange={async (e) => { const f = e.target.files?.[0]; if (f) { const u = await handleFileUpload(f, 'interviews'); if (u) setNewInterview({...newInterview, image_url: u}); } }} /></div>
               <textarea placeholder="Contenido de la entrevista..." className="w-full bg-black border-2 border-white p-2 text-xs rounded-xl h-24" value={newInterview.content} onChange={e => setNewInterview({...newInterview, content: e.target.value})} required />
-              <div className="flex gap-2"><button type="submit" disabled={uploading} className="flex-1 bg-red-600 py-2 text-xs border-2 border-white rounded-full font-black">PUBLICAR</button>{newInterview.id && <button type="button" onClick={() => setNewInterview({id:null, title:'', subtitle:'', band_name:'', content:'', image_url:'', is_active:true, author:'', photo_credit:''})} className="bg-zinc-700 px-4 border border-white rounded-full font-black font-black">X</button>}</div>
+              <div className="flex gap-2"><button type="submit" disabled={uploading} className="flex-1 bg-green-600 py-2 text-xs border-2 border-white rounded-full font-black">PUBLICAR</button>{newInterview.id && <button type="button" onClick={() => setNewInterview({id:null, title:'', subtitle:'', band_name:'', content:'', image_url:'', is_active:true, author:'', photo_credit:''})} className="bg-zinc-700 px-4 border border-white rounded-full font-black font-black">X</button>}</div>
             </form>
             <div className="space-y-2 sm:space-y-3">
               {interviews.map(int => (
@@ -368,18 +368,18 @@ export default function AdminDashboard() {
                   key={int.id}
                   className={`border-4 p-2.5 sm:p-3 flex gap-2 sm:gap-3 rounded-2xl ${
                     int.is_active
-                      ? 'border-red-600 bg-zinc-950 shadow-md'
+                      ? 'border-green-600 bg-zinc-950 shadow-md'
                       : 'border-zinc-800 opacity-50 bg-zinc-900 grayscale'
                   }`}
                 >
                   <img
-                    src={int.image_url || '/logo-rojo.jpg'}
+                    src={int.image_url || '/logo-azul.jpg'}
                     alt={int.title}
                     className="w-14 h-14 sm:w-16 sm:h-16 object-cover border-2 border-white rounded-lg flex-shrink-0"
                   />
                   <div className="min-w-0 flex-1">
                     <h3 className="text-sm sm:text-base font-black uppercase leading-tight line-clamp-2">{int.title}</h3>
-                    <p className="text-[10px] sm:text-xs font-bold text-red-600 uppercase mt-0.5 truncate">{int.band_name}</p>
+                    <p className="text-[10px] sm:text-xs font-bold text-green-600 uppercase mt-0.5 truncate">{int.band_name}</p>
                     <div className="flex flex-wrap gap-1 mt-1.5">
                       <button type="button" onClick={() => setSelectedInterview(int)} className={`${adminBtn} bg-zinc-700 border-white text-white`}>VER</button>
                       <button type="button" onClick={() => setNewInterview(int)} className={`${adminBtn} bg-blue-600 border-white`}>EDITAR</button>
@@ -396,25 +396,25 @@ export default function AdminDashboard() {
       </div>
 
       {selectedMessage && (
-        <div className="fixed inset-0 z-[100] flex items-end sm:items-center justify-center p-0 sm:p-4"><div className="absolute inset-0 bg-black/90 backdrop-blur-sm" onClick={() => setSelectedMessage(null)} /><div className="relative w-full max-w-xl bg-zinc-900 border-4 sm:border-8 border-white p-5 sm:p-8 shadow-2xl rounded-t-3xl sm:rounded-[40px] font-black text-left max-h-[85vh] overflow-y-auto"><button onClick={() => setSelectedMessage(null)} className="absolute top-3 right-3 sm:-top-4 sm:-right-4 bg-red-600 text-white w-9 h-9 sm:w-10 sm:h-10 text-lg border-4 border-white rounded-full">X</button><h3 className="text-xl sm:text-2xl uppercase text-red-600 mb-2 pr-10">{selectedMessage.name}</h3><p className="text-xs text-zinc-500 mb-2 italic break-all">{selectedMessage.email} | {selectedMessage.phone}</p><p className="text-base sm:text-lg text-white">"{selectedMessage.message}"</p><button onClick={() => { if(confirm('¿Borrar?')) deleteMessage(selectedMessage.id) }} className="mt-6 w-full sm:w-auto bg-red-600 text-white px-6 py-2 rounded-full uppercase text-xs border-2 border-white">ELIMINAR</button></div></div>
+        <div className="fixed inset-0 z-[100] flex items-end sm:items-center justify-center p-0 sm:p-4"><div className="absolute inset-0 bg-black/90 backdrop-blur-sm" onClick={() => setSelectedMessage(null)} /><div className="relative w-full max-w-xl bg-zinc-900 border-4 sm:border-8 border-white p-5 sm:p-8 shadow-2xl rounded-t-3xl sm:rounded-[40px] font-black text-left max-h-[85vh] overflow-y-auto"><button onClick={() => setSelectedMessage(null)} className="absolute top-3 right-3 sm:-top-4 sm:-right-4 bg-green-600 text-white w-9 h-9 sm:w-10 sm:h-10 text-lg border-4 border-white rounded-full">X</button><h3 className="text-xl sm:text-2xl uppercase text-green-600 mb-2 pr-10">{selectedMessage.name}</h3><p className="text-xs text-zinc-500 mb-2 italic break-all">{selectedMessage.email} | {selectedMessage.phone}</p><p className="text-base sm:text-lg text-white">"{selectedMessage.message}"</p><button onClick={() => { if(confirm('¿Borrar?')) deleteMessage(selectedMessage.id) }} className="mt-6 w-full sm:w-auto bg-green-600 text-white px-6 py-2 rounded-full uppercase text-xs border-2 border-white">ELIMINAR</button></div></div>
       )}
 
       {selectedInterview && (
-        <div className="fixed inset-0 z-[100] flex items-end sm:items-center justify-center p-0 sm:p-4"><div className="absolute inset-0 bg-black/95 backdrop-blur-md" onClick={() => setSelectedInterview(null)} /><div className="relative w-full max-w-2xl bg-zinc-900 border-4 sm:border-8 border-white p-5 sm:p-10 shadow-2xl rounded-t-3xl sm:rounded-[40px] font-black text-left overflow-y-auto max-h-[92vh] sm:max-h-[90vh]"><button onClick={() => setSelectedInterview(null)} className="absolute top-3 right-3 bg-red-600 text-white w-9 h-9 text-lg border-4 border-white rounded-full">X</button><span className="bg-red-600 text-white px-3 py-1 text-[10px] sm:text-xs uppercase italic rounded-full font-black">BANDA: {selectedInterview.band_name}</span><h3 className="text-2xl sm:text-3xl md:text-5xl font-franklin text-white uppercase mt-3 sm:mt-4 leading-none pr-10">{selectedInterview.title}</h3><p className="text-zinc-400 text-sm sm:text-lg uppercase italic mt-2">{selectedInterview.subtitle}</p>{selectedInterview.image_url && <img src={selectedInterview.image_url} className="w-full h-40 sm:h-64 object-cover border-4 border-white rounded-2xl sm:rounded-3xl my-4 sm:my-6" />}<div className="flex flex-col sm:flex-row sm:justify-between gap-1 text-[10px] text-zinc-500 uppercase mb-4 sm:mb-6 font-black"><p>Nota: {selectedInterview.author}</p><p>Foto: {selectedInterview.photo_credit}</p></div><div className="text-white text-base sm:text-xl leading-relaxed whitespace-pre-wrap font-black">{selectedInterview.content}</div></div></div>
+        <div className="fixed inset-0 z-[100] flex items-end sm:items-center justify-center p-0 sm:p-4"><div className="absolute inset-0 bg-black/95 backdrop-blur-md" onClick={() => setSelectedInterview(null)} /><div className="relative w-full max-w-2xl bg-zinc-900 border-4 sm:border-8 border-white p-5 sm:p-10 shadow-2xl rounded-t-3xl sm:rounded-[40px] font-black text-left overflow-y-auto max-h-[92vh] sm:max-h-[90vh]"><button onClick={() => setSelectedInterview(null)} className="absolute top-3 right-3 bg-green-600 text-white w-9 h-9 text-lg border-4 border-white rounded-full">X</button><span className="bg-green-600 text-white px-3 py-1 text-[10px] sm:text-xs uppercase italic rounded-full font-black">BANDA: {selectedInterview.band_name}</span><h3 className="text-2xl sm:text-3xl md:text-5xl font-franklin text-white uppercase mt-3 sm:mt-4 leading-none pr-10">{selectedInterview.title}</h3><p className="text-zinc-400 text-sm sm:text-lg uppercase italic mt-2">{selectedInterview.subtitle}</p>{selectedInterview.image_url && <img src={selectedInterview.image_url} className="w-full h-40 sm:h-64 object-cover border-4 border-white rounded-2xl sm:rounded-3xl my-4 sm:my-6" />}<div className="flex flex-col sm:flex-row sm:justify-between gap-1 text-[10px] text-zinc-500 uppercase mb-4 sm:mb-6 font-black"><p>Nota: {selectedInterview.author}</p><p>Foto: {selectedInterview.photo_credit}</p></div><div className="text-white text-base sm:text-xl leading-relaxed whitespace-pre-wrap font-black">{selectedInterview.content}</div></div></div>
       )}
       
       <style jsx global>{`
         .custom-scrollbar::-webkit-scrollbar { width: 4px; }
         .custom-scrollbar::-webkit-scrollbar-track { background: #1a1a1a; }
-        .custom-scrollbar::-webkit-scrollbar-thumb { background: #dc2626; border-radius: 10px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #22c55e; border-radius: 10px; }
         @keyframes admin-pending-blink {
           0%, 100% {
-            border-color: #dc2626;
-            box-shadow: 0 0 18px rgba(220, 38, 38, 0.55);
+            border-color: #22c55e;
+            box-shadow: 0 0 18px rgba(34, 197, 94, 0.55);
           }
           50% {
             border-color: #ffffff;
-            box-shadow: 0 0 28px rgba(220, 38, 38, 0.85);
+            box-shadow: 0 0 28px rgba(34, 197, 94, 0.85);
           }
         }
         .admin-pending-card {

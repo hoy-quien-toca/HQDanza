@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Hoy Quien Toca",
-  description: "Cartelera de eventos musicales",
+  title: "HQDanza",
+  description: "Portal de danza y entrevistas",
 };
 
 export default function RootLayout({
@@ -31,7 +31,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col relative bg-zinc-800">
         <div className="global-watermark">
-          <Image src="/logo.jpg" alt="HQT" width={1000} height={1000} className="grayscale" priority />
+          <Image src="/logo.jpg" alt="HQDanza" width={1000} height={1000} className="grayscale" priority />
         </div>
         <div className="content-wrapper flex flex-col flex-1">
           {children}
