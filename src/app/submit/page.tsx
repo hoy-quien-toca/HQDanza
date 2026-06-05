@@ -153,7 +153,7 @@ export default function SubmitEvent() {
               </div>
 
               <div className="md:col-span-2 space-y-2 font-black">
-                <label className="text-xs text-green-600 font-black">Nombre Banda/Artista</label>
+                <label className="text-xs text-green-600 font-black">Nombre Grupo/Artista</label>
                 <input required name="band_name" className="w-full bg-zinc-900 border-4 border-white p-4 rounded-3xl focus:border-green-600 outline-none shadow-inner font-black uppercase" />
               </div>
 

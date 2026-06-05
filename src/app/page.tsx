@@ -265,7 +265,7 @@ export default function Home() {
                     <img src={int.image_url} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" alt={int.title} />
                   </div>
                   <div className="flex flex-col justify-center text-left font-black">
-                    <span className="text-[8px] bg-green-600 text-white px-2 py-0.5 rounded-full w-fit mb-1 italic font-black">BANDA: {int.band_name}</span>
+                    <span className="text-[8px] bg-green-600 text-white px-2 py-0.5 rounded-full w-fit mb-1 italic font-black">GRUPO: {int.band_name}</span>
                     <h3 className="text-sm md:text-xl font-franklin leading-tight uppercase group-hover:text-green-600 font-black">{int.title}</h3>
                     <p className="text-[10px] text-zinc-500 mt-1 font-bold italic line-clamp-1">{int.subtitle}</p>
                   </div>

@@ -119,7 +119,7 @@ export default function InterviewsPage() {
                   )}
                 </div>
                 <div className="space-y-3 font-black">
-                  <span className="bg-green-600 text-white px-3 py-1 text-xs font-black uppercase tracking-widest italic rounded-full font-black">BANDA: {interview.band_name}</span>
+                  <span className="bg-green-600 text-white px-3 py-1 text-xs font-black uppercase tracking-widest italic rounded-full font-black">GRUPO: {interview.band_name}</span>
                   <h3 className="text-3xl font-franklin leading-none group-hover:text-green-600 transition-colors text-white uppercase font-black">{interview.title}</h3>
                   {interview.subtitle && (
                     <p className="text-zinc-400 text-sm font-bold line-clamp-2 uppercase italic font-black">{interview.subtitle}</p>
