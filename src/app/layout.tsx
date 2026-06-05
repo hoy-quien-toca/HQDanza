@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "HQDanza",
-  description: "Portal de danza y entrevistas",
+  description: "Portal de danza y entrevistas ",
 };
 
 export default function RootLayout({
