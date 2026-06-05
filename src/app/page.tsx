@@ -161,14 +161,14 @@ export default function Home() {
   return (
     <div className="min-h-screen text-white font-sans relative overflow-x-hidden text-left bg-zinc-900 font-black">
       <div className="fixed inset-0 flex items-center justify-center pointer-events-none opacity-[0.03] z-0">
-        <Image src="/logo-azul.jpg" alt="Watermark" width={1000} height={1000} className="grayscale" priority />
+        <Image src="/logo-praxis.png" alt="Watermark" width={1000} height={1000} className="" priority />
       </div>
 
       <header className="border-b-4 border-green-600 p-4 md:p-6 bg-zinc-950 sticky top-0 z-50 shadow-xl">
         <div className="max-w-6xl mx-auto flex justify-between items-center font-black">
           <div className="flex items-center gap-4">
             <button onClick={() => setShowLogoModal(true)} className="hover:scale-110 transition-transform cursor-pointer focus:outline-none">
-               <Image src="/logo-azul.jpg" alt="Logo Azul" width={70} height={70} className="border-2 border-white rounded-2xl md:w-[90px] md:h-[90px] shadow-lg shadow-green-600/30" />
+               <Image src="/logo-praxis.png" alt="Logo Azul" width={70} height={70} className="border-2 border-white rounded-2xl md:w-[90px] md:h-[90px] shadow-lg shadow-green-600/30" />
             </button>
             <div>
               <h1 className="text-2xl md:text-5xl font-franklin tracking-tighter text-green-600 leading-none">HQDanza</h1>
@@ -460,7 +460,7 @@ export default function Home() {
             >
               X
             </button>
-            <Image src="/logo-azul.jpg" alt="Logo Grande" width={800} height={800} className="w-full h-auto rounded-3xl sm:rounded-[40px] border-4 border-zinc-800 shadow-2xl" />
+            <Image src="/logo-praxis.png" alt="Logo Grande" width={800} height={800} className="w-full h-auto rounded-3xl sm:rounded-[40px] border-4 border-zinc-800 shadow-2xl" />
             <div className="p-4 sm:p-6 font-black">
               <h3 className="text-3xl sm:text-4xl font-franklin text-green-600 leading-none">HQDanza</h3>
               <p className="text-xs font-black uppercase tracking-widest text-white/60 mt-2 italic">Portal de danza y entrevistas</p>

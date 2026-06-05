@@ -77,13 +77,13 @@ export default function SubmitEvent() {
   return (
     <div className="min-h-screen text-white font-sans relative overflow-x-hidden bg-zinc-900">
       <div className="fixed inset-0 flex items-center justify-center pointer-events-none opacity-[0.03] z-0">
-        <Image src="/logo-azul.jpg" alt="Watermark" width={1000} height={1000} className="grayscale" priority />
+        <Image src="/logo-praxis.png" alt="Watermark" width={1000} height={1000} className="" priority />
       </div>
 
       <header className="border-b-4 border-green-600 p-4 md:p-6 bg-zinc-950 sticky top-0 z-50 shadow-xl">
         <div className="max-w-6xl mx-auto flex justify-between items-center font-black">
           <Link href="/" className="flex items-center gap-6">
-            <Image src="/logo-azul.jpg" alt="Logo Azul" width={50} height={50} className="border border-white rounded-xl md:w-[65px] md:h-[65px]" />
+            <Image src="/logo-praxis.png" alt="Logo Azul" width={50} height={50} className="border border-white rounded-xl md:w-[65px] md:h-[65px]" />
             <div>
               <h1 className="text-2xl md:text-5xl font-franklin tracking-tighter uppercase text-green-600 leading-none">HQDanza</h1>
               <p className="text-[10px] md:text-xs font-bold text-white uppercase tracking-widest mt-1">Portal de danza y entrevistas</p>

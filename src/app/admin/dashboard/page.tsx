@@ -157,7 +157,7 @@ export default function AdminDashboard() {
         )}
         <div className="flex gap-2 sm:gap-3">
           <img
-            src={ev.flyer_url || '/logo-azul.jpg'}
+            src={ev.flyer_url || '/logo-praxis.png'}
             alt={ev.band_name}
             className="w-[6.65rem] h-[8.05rem] sm:w-28 sm:h-[8.4rem] object-cover border-2 border-white rounded-lg flex-shrink-0 self-start"
           />
@@ -327,7 +327,7 @@ export default function AdminDashboard() {
                   }`}
                 >
                   <img
-                    src={sp.image_url || '/logo-azul.jpg'}
+                    src={sp.image_url || '/logo-praxis.png'}
                     alt={sp.client_name}
                     className="w-14 h-14 sm:w-16 sm:h-16 object-contain bg-black border-2 border-white rounded-lg flex-shrink-0"
                   />
@@ -373,7 +373,7 @@ export default function AdminDashboard() {
                   }`}
                 >
                   <img
-                    src={int.image_url || '/logo-azul.jpg'}
+                    src={int.image_url || '/logo-praxis.png'}
                     alt={int.title}
                     className="w-14 h-14 sm:w-16 sm:h-16 object-cover border-2 border-white rounded-lg flex-shrink-0"
                   />

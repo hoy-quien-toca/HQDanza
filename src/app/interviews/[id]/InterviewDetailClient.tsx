@@ -85,14 +85,14 @@ export default function InterviewDetailClient({
   return (
     <div className="min-h-screen text-white font-sans relative overflow-x-hidden text-left bg-zinc-900 font-black">
       <div className="fixed inset-0 flex items-center justify-center pointer-events-none opacity-[0.03] z-0">
-        <Image src="/logo-azul.jpg" alt="Watermark" width={1000} height={1000} className="grayscale" priority />
+        <Image src="/logo-praxis.png" alt="Watermark" width={1000} height={1000} className="" priority />
       </div>
 
       <header className="border-b-4 border-green-600 p-4 md:p-6 bg-zinc-950 sticky top-0 z-50 shadow-xl">
         <div className="max-w-6xl mx-auto flex justify-between items-center">
           <div className="flex items-center gap-4">
             <Link href="/" className="hover:scale-110 transition-transform cursor-pointer focus:outline-none">
-               <Image src="/logo-azul.jpg" alt="Logo" width={50} height={50} className="border border-white rounded-xl shadow-lg" />
+               <Image src="/logo-praxis.png" alt="Logo" width={50} height={50} className="border border-white rounded-xl shadow-lg" />
             </Link>
             <div>
               <h1 className="text-xl md:text-4xl font-franklin tracking-tighter text-green-600 leading-none">HQDanza</h1>
@@ -175,7 +175,7 @@ export default function InterviewDetailClient({
           <div className="absolute inset-0 bg-black/95 backdrop-blur-xl" onClick={() => setShowLogoModal(false)} />
           <div className="relative max-w-lg w-full bg-zinc-900 border-8 border-white p-6 rounded-[50px] shadow-2xl text-center">
             <button onClick={() => setShowLogoModal(false)} className="absolute -top-4 -right-4 bg-green-600 text-white w-12 h-12 font-black text-2xl border-4 border-white rounded-full">X</button>
-            <Image src="/logo-azul.jpg" alt="Logo Grande" width={600} height={600} className="w-full h-auto rounded-[30px]" />
+            <Image src="/logo-praxis.png" alt="Logo Grande" width={600} height={600} className="w-full h-auto rounded-[30px]" />
             <h3 className="text-3xl font-franklin text-green-600 mt-4 leading-none">HQDanza</h3>
           </div>
         </div>

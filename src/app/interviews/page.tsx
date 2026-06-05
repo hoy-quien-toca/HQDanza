@@ -43,14 +43,14 @@ export default function InterviewsPage() {
   return (
     <div className="min-h-screen text-white font-sans relative overflow-x-hidden bg-zinc-900 font-black">
       <div className="fixed inset-0 flex items-center justify-center pointer-events-none opacity-[0.03] z-0">
-        <Image src="/logo-azul.jpg" alt="Watermark" width={1000} height={1000} className="grayscale" priority />
+        <Image src="/logo-praxis.png" alt="Watermark" width={1000} height={1000} className="" priority />
       </div>
 
       <header className="border-b-4 border-green-600 p-4 md:p-6 bg-zinc-950 sticky top-0 z-50 shadow-xl text-left">
         <div className="max-w-6xl mx-auto flex justify-between items-center">
           <div className="flex items-center gap-4">
             <Link href="/" className="hover:scale-110 transition-transform cursor-pointer focus:outline-none">
-               <Image src="/logo-azul.jpg" alt="Logo" width={70} height={70} className="border-2 border-white rounded-2xl md:w-[85px] md:h-[85px] shadow-lg shadow-green-600/30" />
+               <Image src="/logo-praxis.png" alt="Logo" width={70} height={70} className="border-2 border-white rounded-2xl md:w-[85px] md:h-[85px] shadow-lg shadow-green-600/30" />
             </Link>
             <div>
               <h1 className="text-2xl md:text-5xl font-franklin tracking-tighter text-green-600 leading-none uppercase">HQDanza</h1>
@@ -141,7 +141,7 @@ export default function InterviewsPage() {
           <div className="absolute inset-0 bg-black/95 backdrop-blur-xl" onClick={() => setShowLogoModal(false)} />
           <div className="relative max-w-lg w-full bg-zinc-900 border-8 border-white p-4 rounded-[50px] shadow-2xl text-center font-black">
             <button onClick={() => setShowLogoModal(false)} className="absolute -top-4 -right-4 bg-green-600 text-white w-12 h-12 font-black text-2xl border-4 border-white rounded-full font-black">X</button>
-            <Image src="/logo-azul.jpg" alt="Logo Grande" width={800} height={800} className="w-full h-auto rounded-[30px] font-black" />
+            <Image src="/logo-praxis.png" alt="Logo Grande" width={800} height={800} className="w-full h-auto rounded-[30px] font-black" />
             <h3 className="text-3xl font-franklin text-green-600 mt-4 leading-none font-black">HQDanza</h3>
           </div>
         </div>
