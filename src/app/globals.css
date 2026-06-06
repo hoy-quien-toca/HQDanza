@@ -4,13 +4,13 @@
 :root {
   --background: #18181b;
   --foreground: #ffffff;
-  --accent-green: #22c55e;
+  --accent-orange: #f97316;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-accent-green: var(--accent-green);
+  --color-accent-orange: var(--accent-orange);
 }
 
 body {
@@ -37,18 +37,18 @@ body {
   z-index: 0;
 }
 
-@keyframes pulse-green {
-  0%, 100% { opacity: 1; border-color: #22c55e; box-shadow: 0 0 15px rgba(34, 197, 94, 0.5); }
+@keyframes pulse-orange {
+  0%, 100% { opacity: 1; border-color: #f97316; box-shadow: 0 0 15px rgba(249, 115, 22, 0.5); }
   50% { opacity: 0.8; border-color: white; box-shadow: none; }
 }
 
-.animate-pulse-green {
-  animation: pulse-green 2s infinite;
+.animate-pulse-orange {
+  animation: pulse-orange 2s infinite;
 }
 
 .custom-scrollbar::-webkit-scrollbar { width: 6px; }
 .custom-scrollbar::-webkit-scrollbar-track { background: #1a1a1a; }
-.custom-scrollbar::-webkit-scrollbar-thumb { background: #22c55e; border-radius: 10px; }
+.custom-scrollbar::-webkit-scrollbar-thumb { background: #f97316; border-radius: 10px; }
 
 .hqt-card {
   border-radius: 32px;

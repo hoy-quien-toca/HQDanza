@@ -77,25 +77,25 @@ export default function SubmitEvent() {
   return (
     <div className="min-h-screen text-white font-sans relative overflow-x-hidden bg-zinc-900">
       <div className="fixed inset-0 flex items-center justify-center pointer-events-none opacity-[0.03] z-0">
-        <Image src="/logo-praxis.png" alt="Watermark" width={1000} height={1000} className="" priority />
+        <Image src="/logo-nuevo.png" alt="Watermark" width={1000} height={1000} className="" priority />
       </div>
 
-      <header className="border-b-4 border-green-600 p-4 md:p-6 bg-zinc-950 sticky top-0 z-50 shadow-xl">
+      <header className="border-b-4 border-orange-500 p-4 md:p-6 bg-zinc-950 sticky top-0 z-50 shadow-xl">
         <div className="max-w-6xl mx-auto flex justify-between items-center font-black">
           <Link href="/" className="flex items-center gap-6">
-            <Image src="/logo-praxis.png" alt="Logo Azul" width={50} height={50} className="border border-white rounded-xl md:w-[65px] md:h-[65px]" />
+            <Image src="/logo-nuevo.png" alt="Logo Azul" width={50} height={50} className="border border-white rounded-xl md:w-[65px] md:h-[65px]" />
             <div>
-              <h1 className="text-2xl md:text-5xl font-franklin tracking-tighter uppercase text-green-600 leading-none">HQDanza</h1>
+              <h1 className="text-2xl md:text-5xl font-franklin tracking-tighter uppercase text-orange-500 leading-none">HQDanza</h1>
               <p className="text-[10px] md:text-xs font-bold text-white uppercase tracking-widest mt-1">Portal de danza y entrevistas</p>
             </div>
           </Link>
           <nav className="hidden md:flex gap-6 font-bold uppercase tracking-widest text-sm items-center">
-            <Link href="/" className="hover:text-green-600 font-black">Fechas</Link>
-            <Link href="/interviews" className="hover:text-green-600 font-black">Entrevistas</Link>
-            <Link href="/contact" className="hover:text-green-600 font-black">Contacto</Link>
-            <Link href="/submit" className="border-2 border-green-600 text-green-600 px-4 py-1 bg-black rounded-full animate-pulse hover:bg-green-600 hover:text-white transition-colors font-black">Subir Fecha</Link>
+            <Link href="/" className="hover:text-orange-500 font-black">Fechas</Link>
+            <Link href="/interviews" className="hover:text-orange-500 font-black">Entrevistas</Link>
+            <Link href="/contact" className="hover:text-orange-500 font-black">Contacto</Link>
+            <Link href="/submit" className="border-2 border-orange-500 text-orange-500 px-4 py-1 bg-black rounded-full animate-pulse hover:bg-orange-500 hover:text-white transition-colors font-black">Subir Fecha</Link>
           </nav>
-          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden text-green-600">
+          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden text-orange-500">
             <svg className="w-8 h-8 font-black" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={isMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}></path></svg>
           </button>
         </div>
@@ -107,15 +107,15 @@ export default function SubmitEvent() {
           <Link href="/" onClick={() => setIsMenuOpen(false)} className="text-4xl uppercase text-white italic font-black font-franklin">Fechas</Link>
           <Link href="/interviews" onClick={() => setIsMenuOpen(false)} className="text-4xl uppercase text-white italic font-black font-franklin">Entrevistas</Link>
           <Link href="/contact" onClick={() => setIsMenuOpen(false)} className="text-4xl uppercase text-white italic font-black font-franklin">Contacto</Link>
-          <Link href="/submit" onClick={() => setIsMenuOpen(false)} className="text-3xl uppercase border-4 border-green-600 text-green-600 px-8 py-4 rounded-full animate-pulse font-black font-franklin">Subir Fecha</Link>
+          <Link href="/submit" onClick={() => setIsMenuOpen(false)} className="text-3xl uppercase border-4 border-orange-500 text-orange-500 px-8 py-4 rounded-full animate-pulse font-black font-franklin">Subir Fecha</Link>
         </div>
       )}
 
       <main className="max-w-3xl mx-auto p-4 md:p-12 relative z-10 font-black">
         {submitted ? (
-          <div className="border-8 border-white p-8 md:p-12 bg-zinc-950 shadow-[12px_12px_0px_0px_rgba(34,197,94,0.5)] rounded-[40px] text-center flex flex-col items-center justify-center space-y-8 font-black">
+          <div className="border-8 border-white p-8 md:p-12 bg-zinc-950 shadow-[12px_12px_0px_0px_rgba(249, 115, 22,0.5)] rounded-[40px] text-center flex flex-col items-center justify-center space-y-8 font-black">
             <div className="space-y-4">
-              <h2 className="text-5xl md:text-7xl font-franklin uppercase text-green-600 leading-none font-black">¡Recibido!</h2>
+              <h2 className="text-5xl md:text-7xl font-franklin uppercase text-orange-500 leading-none font-black">¡Recibido!</h2>
               <p className="text-lg md:text-xl font-bold uppercase tracking-widest italic font-black">Tu fecha está en la cola de aprobación.</p>
             </div>
             <div className="flex flex-col gap-4 w-full max-w-sm">
@@ -124,78 +124,78 @@ export default function SubmitEvent() {
                   setSubmitted(false);
                   setFlyerUrl('');
                 }}
-                className="bg-green-600 text-white px-8 py-4 rounded-full font-black uppercase hover:bg-white hover:text-black transition-all border-4 border-white shadow-lg"
+                className="bg-orange-500 text-white px-8 py-4 rounded-full font-black uppercase hover:bg-white hover:text-black transition-all border-4 border-white shadow-lg"
               >
                 Subir otra fecha
               </button>
-              <Link href="/" className="bg-white text-black px-8 py-4 rounded-full font-black uppercase hover:bg-green-600 hover:text-white transition-all border-4 border-white shadow-lg">
+              <Link href="/" className="bg-white text-black px-8 py-4 rounded-full font-black uppercase hover:bg-orange-500 hover:text-white transition-all border-4 border-white shadow-lg">
                 Volver al Inicio
               </Link>
             </div>
           </div>
         ) : (
-          <div className="border-8 border-white p-6 md:p-12 bg-zinc-950 shadow-[12px_12px_0px_0px_rgba(34,197,94,0.5)] rounded-[40px] relative font-black">
-            <Link href="/" className="absolute -top-4 -right-4 bg-green-600 text-white w-12 h-12 flex items-center justify-center font-black text-2xl border-4 border-white hover:bg-black transition-colors rounded-full shadow-xl">X</Link>
-            <h2 className="text-5xl md:text-7xl font-franklin uppercase text-green-600 mb-2 leading-none font-black">Subir Fecha</h2>
+          <div className="border-8 border-white p-6 md:p-12 bg-zinc-950 shadow-[12px_12px_0px_0px_rgba(249, 115, 22,0.5)] rounded-[40px] relative font-black">
+            <Link href="/" className="absolute -top-4 -right-4 bg-orange-500 text-white w-12 h-12 flex items-center justify-center font-black text-2xl border-4 border-white hover:bg-black transition-colors rounded-full shadow-xl">X</Link>
+            <h2 className="text-5xl md:text-7xl font-franklin uppercase text-orange-500 mb-2 leading-none font-black">Subir Fecha</h2>
             <p className="text-[10px] font-bold text-white/60 uppercase tracking-widest mb-10 italic font-black">Portal de danza y entrevistas</p>
             
             <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left font-black uppercase">
               <div className="md:col-span-2 space-y-2 font-black">
-                <label className="text-xs text-green-600 font-black">Flyer del Show</label>
-                <div className="border-4 border-dashed border-zinc-700 p-4 text-center relative rounded-3xl hover:border-green-600 transition-colors bg-zinc-900 shadow-inner font-black">
+                <label className="text-xs text-orange-500 font-black">Flyer del Show</label>
+                <div className="border-4 border-dashed border-zinc-700 p-4 text-center relative rounded-3xl hover:border-orange-500 transition-colors bg-zinc-900 shadow-inner font-black">
                   {flyerUrl ? <img src={flyerUrl} className="max-h-64 mx-auto rounded-2xl" /> : <p className="py-8 text-zinc-500 italic font-black">{uploading ? 'Subiendo...' : 'Click para subir'}</p>}
                   <input type="file" accept="image/*" onChange={handleFileUpload} className="absolute inset-0 opacity-0 cursor-pointer font-black" />
                 </div>
               </div>
 
               <div className="md:col-span-2 space-y-2 font-black">
-                <label className="text-xs text-green-600 font-black">Nombre Grupo/Artista</label>
-                <input required name="band_name" className="w-full bg-zinc-900 border-4 border-white p-4 rounded-3xl focus:border-green-600 outline-none shadow-inner font-black uppercase" />
+                <label className="text-xs text-orange-500 font-black">Nombre Grupo/Artista</label>
+                <input required name="band_name" className="w-full bg-zinc-900 border-4 border-white p-4 rounded-3xl focus:border-orange-500 outline-none shadow-inner font-black uppercase" />
               </div>
 
               <div className="space-y-2 font-black">
-                <label className="text-xs text-green-600 font-black">Fecha</label>
-                <input required type="date" name="date" className="w-full bg-zinc-900 border-4 border-white p-4 rounded-3xl focus:border-green-600 outline-none font-black" />
+                <label className="text-xs text-orange-500 font-black">Fecha</label>
+                <input required type="date" name="date" className="w-full bg-zinc-900 border-4 border-white p-4 rounded-3xl focus:border-orange-500 outline-none font-black" />
               </div>
               <div className="space-y-2 font-black">
-                <label className="text-xs text-green-600 font-black">Hora</label>
-                <input required type="time" name="time" className="w-full bg-zinc-900 border-4 border-white p-4 rounded-3xl focus:border-green-600 outline-none font-black" />
+                <label className="text-xs text-orange-500 font-black">Hora</label>
+                <input required type="time" name="time" className="w-full bg-zinc-900 border-4 border-white p-4 rounded-3xl focus:border-orange-500 outline-none font-black" />
               </div>
 
               <div className="md:col-span-2 space-y-2 font-black">
-                <label className="text-xs text-green-600 font-black">Reseña</label>
-                <textarea name="description" rows={3} className="w-full bg-zinc-900 border-4 border-white p-4 rounded-[32px] focus:border-green-600 outline-none font-black uppercase" />
+                <label className="text-xs text-orange-500 font-black">Reseña</label>
+                <textarea name="description" rows={3} className="w-full bg-zinc-900 border-4 border-white p-4 rounded-[32px] focus:border-orange-500 outline-none font-black uppercase" />
               </div>
 
               <div className="space-y-2 font-black">
-                <label className="text-xs text-green-600 font-black">Lugar / Local</label>
-                <input required name="venue" className="w-full bg-zinc-900 border-4 border-white p-4 rounded-3xl focus:border-green-600 outline-none shadow-inner font-black uppercase" placeholder="Ej: Teatro Solís" />
+                <label className="text-xs text-orange-500 font-black">Lugar / Local</label>
+                <input required name="venue" className="w-full bg-zinc-900 border-4 border-white p-4 rounded-3xl focus:border-orange-500 outline-none shadow-inner font-black uppercase" placeholder="Ej: Teatro Solís" />
               </div>
               <div className="space-y-2 font-black">
-                <label className="text-xs text-green-600 font-black">Dirección del evento</label>
-                <input required name="address" className="w-full bg-zinc-900 border-4 border-white p-4 rounded-3xl focus:border-green-600 outline-none shadow-inner font-black uppercase" placeholder="Ej: Buenos Aires 1234" />
+                <label className="text-xs text-orange-500 font-black">Dirección del evento</label>
+                <input required name="address" className="w-full bg-zinc-900 border-4 border-white p-4 rounded-3xl focus:border-orange-500 outline-none shadow-inner font-black uppercase" placeholder="Ej: Buenos Aires 1234" />
               </div>
 
               <div className="space-y-2 font-black">
-                <label className="text-xs text-green-600 font-black">Departamento</label>
-                <select name="department" className="w-full bg-zinc-900 border-4 border-white p-4 rounded-3xl focus:border-green-600 outline-none uppercase font-black">
+                <label className="text-xs text-orange-500 font-black">Departamento</label>
+                <select name="department" className="w-full bg-zinc-900 border-4 border-white p-4 rounded-3xl focus:border-orange-500 outline-none uppercase font-black">
                   {DEPARTAMENTOS.map(d => <option key={d} value={d}>{d}</option>)}
                 </select>
               </div>
               <div className="space-y-2 font-black">
-                <label className="text-xs text-green-600 font-black">Ciudad</label>
-                <input required name="city" className="w-full bg-zinc-900 border-4 border-white p-4 rounded-3xl focus:border-green-600 outline-none shadow-inner font-black uppercase" />
+                <label className="text-xs text-orange-500 font-black">Ciudad</label>
+                <input required name="city" className="w-full bg-zinc-900 border-4 border-white p-4 rounded-3xl focus:border-orange-500 outline-none shadow-inner font-black uppercase" />
               </div>
 
               <div className="space-y-2 font-black">
-                <label className="text-xs text-green-600 font-black">Estilo</label>
-                <select required name="genre" className="w-full bg-zinc-900 border-4 border-white p-4 rounded-3xl focus:border-green-600 outline-none uppercase font-black">
+                <label className="text-xs text-orange-500 font-black">Estilo</label>
+                <select required name="genre" className="w-full bg-zinc-900 border-4 border-white p-4 rounded-3xl focus:border-orange-500 outline-none uppercase font-black">
                   {GENEROS.map(g => <option key={g} value={g}>{g}</option>)}
                 </select>
               </div>
               <div className="space-y-2 font-black">
-                <label className="text-xs text-green-600 font-black">Clasificación</label>
-                <select name="age_rating" className="w-full bg-zinc-900 border-4 border-white p-4 rounded-3xl focus:border-green-600 outline-none uppercase font-black">
+                <label className="text-xs text-orange-500 font-black">Clasificación</label>
+                <select name="age_rating" className="w-full bg-zinc-900 border-4 border-white p-4 rounded-3xl focus:border-orange-500 outline-none uppercase font-black">
                    <option value="ATP">ATP</option>
                    <option value="+5">+5</option><option value="+7">+7</option><option value="+10">+10</option>
                    <option value="+12">+12</option><option value="+15">+15</option><option value="+18">+18</option>
@@ -204,12 +204,12 @@ export default function SubmitEvent() {
 
               <div className="md:col-span-2 border-t-2 border-zinc-800 pt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2 font-black">
-                  <label className="text-xs text-green-600 font-black">Tipo de Entrada</label>
+                  <label className="text-xs text-orange-500 font-black">Tipo de Entrada</label>
                   <select 
                     name="price_type" 
                     value={priceType} 
                     onChange={(e) => setPriceType(e.target.value)}
-                    className="w-full bg-zinc-900 border-4 border-white p-4 rounded-3xl focus:border-green-600 outline-none font-black"
+                    className="w-full bg-zinc-900 border-4 border-white p-4 rounded-3xl focus:border-orange-500 outline-none font-black"
                   >
                     <option value="range">PAGO (Entradas)</option>
                     <option value="free">ENTRADA LIBRE</option>
@@ -220,12 +220,12 @@ export default function SubmitEvent() {
                 {priceType === 'range' && (
                   <div className="grid grid-cols-2 gap-4">
                     <div className="space-y-2 font-black">
-                      <label className="text-[10px] text-green-600 font-black">Precio Mín ($)</label>
-                      <input type="number" name="price_min" className="w-full bg-zinc-900 border-4 border-white p-4 rounded-3xl focus:border-green-600 outline-none font-black" />
+                      <label className="text-[10px] text-orange-500 font-black">Precio Mín ($)</label>
+                      <input type="number" name="price_min" className="w-full bg-zinc-900 border-4 border-white p-4 rounded-3xl focus:border-orange-500 outline-none font-black" />
                     </div>
                     <div className="space-y-2 font-black">
-                      <label className="text-[10px] text-green-600 font-black">Precio Máx ($)</label>
-                      <input type="number" name="price_max" className="w-full bg-zinc-900 border-4 border-white p-4 rounded-3xl focus:border-green-600 outline-none font-black" />
+                      <label className="text-[10px] text-orange-500 font-black">Precio Máx ($)</label>
+                      <input type="number" name="price_max" className="w-full bg-zinc-900 border-4 border-white p-4 rounded-3xl focus:border-orange-500 outline-none font-black" />
                     </div>
                   </div>
                 )}
@@ -233,19 +233,19 @@ export default function SubmitEvent() {
 
               <div className="md:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2 font-black">
-                  <label className="text-xs text-green-600 font-black">¿Dónde comprar?</label>
-                  <select value={ticketType} onChange={(e) => setTicketType(e.target.value)} className="w-full bg-zinc-900 border-4 border-white p-4 rounded-3xl focus:border-green-600 outline-none font-black">
+                  <label className="text-xs text-orange-500 font-black">¿Dónde comprar?</label>
+                  <select value={ticketType} onChange={(e) => setTicketType(e.target.value)} className="w-full bg-zinc-900 border-4 border-white p-4 rounded-3xl focus:border-orange-500 outline-none font-black">
                     <option value="link">Página Web / Link</option>
                     <option value="whatsapp">Venta por WhatsApp</option>
                   </select>
                 </div>
                 <div className="space-y-2 font-black">
-                  <label className="text-xs text-green-600 font-black">{ticketType === 'whatsapp' ? 'Celular de contacto' : 'Link de compra'}</label>
-                  <input required name="ticket_contact" placeholder={ticketType === 'whatsapp' ? '099 123 456' : 'https://...'} className="w-full bg-zinc-900 border-4 border-white p-4 rounded-3xl focus:border-green-600 outline-none font-black" />
+                  <label className="text-xs text-orange-500 font-black">{ticketType === 'whatsapp' ? 'Celular de contacto' : 'Link de compra'}</label>
+                  <input required name="ticket_contact" placeholder={ticketType === 'whatsapp' ? '099 123 456' : 'https://...'} className="w-full bg-zinc-900 border-4 border-white p-4 rounded-3xl focus:border-orange-500 outline-none font-black" />
                 </div>
               </div>
 
-              <button disabled={loading || uploading} className="md:col-span-2 w-full bg-green-600 text-white font-black uppercase text-2xl py-6 rounded-full hover:bg-white hover:text-black transition-all border-4 border-white shadow-xl italic tracking-tighter disabled:opacity-50 font-black">
+              <button disabled={loading || uploading} className="md:col-span-2 w-full bg-orange-500 text-white font-black uppercase text-2xl py-6 rounded-full hover:bg-white hover:text-black transition-all border-4 border-white shadow-xl italic tracking-tighter disabled:opacity-50 font-black">
                 {loading ? 'Enviando...' : 'Subir Evento Ahora'}
               </button>
             </form>

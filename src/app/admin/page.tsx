@@ -31,31 +31,31 @@ export default function AdminLogin() {
 
   return (
     <div className="min-h-screen bg-black text-white flex items-center justify-center p-6">
-      <div className="max-w-md w-full border-8 border-green-600 p-8 bg-zinc-900 shadow-[12px_12px_0px_0px_rgba(255,255,255,1)]">
+      <div className="max-w-md w-full border-8 border-orange-500 p-8 bg-zinc-900 shadow-[12px_12px_0px_0px_rgba(255,255,255,1)]">
         <h1 className="text-4xl font-black uppercase italic text-center mb-8 tracking-tighter">
           Acceso Admin
         </h1>
         
         <form onSubmit={handleLogin} className="space-y-6">
           <div className="space-y-2">
-            <label className="block font-black uppercase text-sm tracking-widest text-green-600">Email</label>
+            <label className="block font-black uppercase text-sm tracking-widest text-orange-500">Email</label>
             <input 
               type="email" 
               required 
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full bg-black border-2 border-white p-3 outline-none focus:border-green-600 font-bold"
+              className="w-full bg-black border-2 border-white p-3 outline-none focus:border-orange-500 font-bold"
             />
           </div>
           
           <div className="space-y-2">
-            <label className="block font-black uppercase text-sm tracking-widest text-green-600">Contraseña</label>
+            <label className="block font-black uppercase text-sm tracking-widest text-orange-500">Contraseña</label>
             <input 
               type="password" 
               required 
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full bg-black border-2 border-white p-3 outline-none focus:border-green-600 font-bold"
+              className="w-full bg-black border-2 border-white p-3 outline-none focus:border-orange-500 font-bold"
             />
           </div>
 
@@ -64,7 +64,7 @@ export default function AdminLogin() {
           <button 
             type="submit" 
             disabled={loading}
-            className="w-full bg-green-600 text-black font-black uppercase py-4 text-xl hover:bg-white transition-colors"
+            className="w-full bg-orange-500 text-black font-black uppercase py-4 text-xl hover:bg-white transition-colors"
           >
             {loading ? 'Entrando...' : 'Ingresar'}
           </button>

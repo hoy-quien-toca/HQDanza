@@ -142,9 +142,9 @@ export default function Home() {
   const getTagStyle = (tag: string) => {
     switch (tag) {
       case 'PLANAZO': return 'bg-yellow-400 text-black border-black';
-      case 'SALIDA SEGURA': return 'bg-green-600 text-white border-white';
+      case 'SALIDA SEGURA': return 'bg-orange-500 text-white border-white';
       case 'NO FALLA': return 'bg-white text-black border-black';
-      default: return 'bg-green-600 text-white border-white';
+      default: return 'bg-orange-500 text-white border-white';
     }
   };
 
@@ -161,29 +161,29 @@ export default function Home() {
   return (
     <div className="min-h-screen text-white font-sans relative overflow-x-hidden text-left bg-zinc-900 font-black">
       <div className="fixed inset-0 flex items-center justify-center pointer-events-none opacity-[0.03] z-0">
-        <Image src="/logo-praxis.png" alt="Watermark" width={1000} height={1000} className="" priority />
+        <Image src="/logo-nuevo.png" alt="Watermark" width={1000} height={1000} className="" priority />
       </div>
 
-      <header className="border-b-4 border-green-600 p-4 md:p-6 bg-zinc-950 sticky top-0 z-50 shadow-xl">
+      <header className="border-b-4 border-orange-500 p-4 md:p-6 bg-zinc-950 sticky top-0 z-50 shadow-xl">
         <div className="max-w-6xl mx-auto flex justify-between items-center font-black">
           <div className="flex items-center gap-4">
             <button onClick={() => setShowLogoModal(true)} className="hover:scale-110 transition-transform cursor-pointer focus:outline-none">
-               <Image src="/logo-praxis.png" alt="Logo Azul" width={70} height={70} className="border-2 border-white rounded-2xl md:w-[90px] md:h-[90px] shadow-lg shadow-green-600/30" />
+               <Image src="/logo-nuevo.png" alt="Logo Azul" width={70} height={70} className="border-2 border-white rounded-2xl md:w-[90px] md:h-[90px] shadow-lg shadow-orange-500/30" />
             </button>
             <div>
-              <h1 className="text-2xl md:text-5xl font-franklin tracking-tighter text-green-600 leading-none">HQDanza</h1>
+              <h1 className="text-2xl md:text-5xl font-franklin tracking-tighter text-orange-500 leading-none">HQDanza</h1>
               <p className="text-[10px] md:text-xs font-black text-white uppercase tracking-widest mt-1">Portal de danza y entrevistas</p>
             </div>
           </div>
           
           <nav className="hidden md:flex gap-6 font-bold uppercase tracking-widest text-sm items-center">
-            <Link href="/" className="text-green-600 underline decoration-2 underline-offset-4 font-black">Fechas</Link>
-            <Link href="/interviews" className="hover:text-green-600 transition-colors font-black">Entrevistas</Link>
-            <Link href="/contact" className="hover:text-green-600 transition-colors font-black">Contacto</Link>
-            <Link href="/submit" className="border-2 border-green-600 text-green-600 px-4 py-1 bg-black rounded-full animate-pulse hover:bg-green-600 hover:text-white transition-colors font-black">Subir Fecha</Link>
+            <Link href="/" className="text-orange-500 underline decoration-2 underline-offset-4 font-black">Fechas</Link>
+            <Link href="/interviews" className="hover:text-orange-500 transition-colors font-black">Entrevistas</Link>
+            <Link href="/contact" className="hover:text-orange-500 transition-colors font-black">Contacto</Link>
+            <Link href="/submit" className="border-2 border-orange-500 text-orange-500 px-4 py-1 bg-black rounded-full animate-pulse hover:bg-orange-500 hover:text-white transition-colors font-black">Subir Fecha</Link>
           </nav>
 
-          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden text-green-600 focus:outline-none">
+          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden text-orange-500 focus:outline-none">
             <svg className="w-8 h-8 font-black" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={isMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}></path></svg>
           </button>
         </div>
@@ -192,10 +192,10 @@ export default function Home() {
       {isMenuOpen && (
         <div className="fixed inset-0 z-[60] bg-black/95 flex flex-col items-center justify-center space-y-8 md:hidden text-center font-black">
           <button onClick={() => setIsMenuOpen(false)} className="absolute top-6 right-6 text-white text-4xl font-black">X</button>
-          <Link href="/" onClick={() => setIsMenuOpen(false)} className="text-4xl font-franklin text-green-600 italic">Fechas</Link>
+          <Link href="/" onClick={() => setIsMenuOpen(false)} className="text-4xl font-franklin text-orange-500 italic">Fechas</Link>
           <Link href="/interviews" onClick={() => setIsMenuOpen(false)} className="text-4xl font-franklin text-white italic">Entrevistas</Link>
           <Link href="/contact" onClick={() => setIsMenuOpen(false)} className="text-4xl font-franklin text-white italic">Contacto</Link>
-          <Link href="/submit" onClick={() => setIsMenuOpen(false)} className="text-3xl font-franklin border-4 border-green-600 text-green-600 px-8 py-4 rounded-full animate-pulse font-black">Subir Fecha</Link>
+          <Link href="/submit" onClick={() => setIsMenuOpen(false)} className="text-3xl font-franklin border-4 border-orange-500 text-orange-500 px-8 py-4 rounded-full animate-pulse font-black">Subir Fecha</Link>
         </div>
       )}
 
@@ -204,14 +204,14 @@ export default function Home() {
         {topSponsor && (
           <div onClick={() => setSelectedAd(topSponsor)} className="cursor-pointer block w-full h-20 md:h-24 bg-zinc-950 border-4 border-white overflow-hidden shadow-lg group relative rounded-2xl md:rounded-3xl">
             <img src={topSponsor.image_url} alt="Sponsor" className="w-full h-full object-cover transition-all duration-500" />
-            <div className="absolute top-2 left-2 bg-black/60 text-white text-[8px] font-black px-2 py-0.5 border border-green-600 uppercase tracking-widest rounded-lg">Publicidad</div>
+            <div className="absolute top-2 left-2 bg-black/60 text-white text-[8px] font-black px-2 py-0.5 border border-orange-500 uppercase tracking-widest rounded-lg">Publicidad</div>
           </div>
         )}
 
         {featuredEvents.length > 0 && (
           <section 
             onClick={() => setSelectedEvent(featuredEvents[currentHeroIndex])}
-            className="relative h-[300px] md:h-[500px] border-4 md:border-8 border-white bg-zinc-800 flex items-end p-4 md:p-10 overflow-hidden shadow-[12px_12px_0px_0px_rgba(34,197,94,0.3)] group rounded-[24px] md:rounded-[40px] cursor-pointer"
+            className="relative h-[300px] md:h-[500px] border-4 md:border-8 border-white bg-zinc-800 flex items-end p-4 md:p-10 overflow-hidden shadow-[12px_12px_0px_0px_rgba(249, 115, 22,0.3)] group rounded-[24px] md:rounded-[40px] cursor-pointer"
           >
             <div className="absolute inset-0">
                {featuredEvents[currentHeroIndex].flyer_url && (
@@ -222,13 +222,13 @@ export default function Home() {
             
             <button 
               onClick={(e) => { e.stopPropagation(); prevHero(); }} 
-              className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-30 bg-black/50 text-white w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full border-2 border-white hover:bg-green-600 transition-colors opacity-0 group-hover:opacity-100"
+              className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-30 bg-black/50 text-white w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full border-2 border-white hover:bg-orange-500 transition-colors opacity-0 group-hover:opacity-100"
             >
                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7"></path></svg>
             </button>
             <button 
               onClick={(e) => { e.stopPropagation(); nextHero(); }} 
-              className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-30 bg-black/50 text-white w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full border-2 border-white hover:bg-green-600 transition-colors opacity-0 group-hover:opacity-100"
+              className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-30 bg-black/50 text-white w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full border-2 border-white hover:bg-orange-500 transition-colors opacity-0 group-hover:opacity-100"
             >
                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path></svg>
             </button>
@@ -238,14 +238,14 @@ export default function Home() {
                 <span className={`px-3 py-0.5 text-[10px] md:text-sm font-black uppercase italic tracking-widest shadow-md rounded-full border-2 ${getTagStyle(featuredEvents[currentHeroIndex].suggestion_tag)}`}>
                   {featuredEvents[currentHeroIndex].suggestion_tag || 'DESTACADO'}
                 </span>
-                <span className="bg-white text-black px-3 py-0.5 text-[10px] md:text-sm font-black uppercase rounded-full border-2 border-green-600 shadow-md">
+                <span className="bg-white text-black px-3 py-0.5 text-[10px] md:text-sm font-black uppercase rounded-full border-2 border-orange-500 shadow-md">
                    {renderPriceLabel(featuredEvents[currentHeroIndex])}
                 </span>
               </div>
               <h2 className="text-3xl md:text-8xl font-franklin tracking-tighter mt-2 md:mt-4 drop-shadow-2xl text-white uppercase leading-none font-black">
                 {featuredEvents[currentHeroIndex].band_name}
               </h2>
-              <p className="text-xs md:text-2xl font-bold text-white uppercase tracking-widest border-l-4 md:border-l-8 border-green-600 pl-4 mt-2 md:mt-4 font-black">
+              <p className="text-xs md:text-2xl font-bold text-white uppercase tracking-widest border-l-4 md:border-l-8 border-orange-500 pl-4 mt-2 md:mt-4 font-black">
                 {formatDate(featuredEvents[currentHeroIndex].date)} @ {featuredEvents[currentHeroIndex].venue} {featuredEvents[currentHeroIndex].address && `- ${featuredEvents[currentHeroIndex].address}`}
               </p>
             </div>
@@ -254,19 +254,19 @@ export default function Home() {
 
         {interviews.length > 0 && (
           <section className="space-y-6">
-            <div className="flex justify-between items-center border-l-8 border-green-600 pl-4">
+            <div className="flex justify-between items-center border-l-8 border-orange-500 pl-4">
               <h2 className="text-2xl md:text-4xl font-franklin uppercase leading-none">Entrevistas</h2>
-              <Link href="/interviews" className="text-xs md:text-sm font-black uppercase underline hover:text-green-600 transition-colors">Ver Todas</Link>
+              <Link href="/interviews" className="text-xs md:text-sm font-black uppercase underline hover:text-orange-500 transition-colors">Ver Todas</Link>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 font-black">
               {interviews.map(int => (
-                <Link key={int.id} href={`/interviews/${int.id}`} className="flex gap-4 bg-zinc-950 border-4 border-white p-3 hover:border-green-600 transition-all rounded-[24px] shadow-lg group">
+                <Link key={int.id} href={`/interviews/${int.id}`} className="flex gap-4 bg-zinc-950 border-4 border-white p-3 hover:border-orange-500 transition-all rounded-[24px] shadow-lg group">
                   <div className="w-24 h-24 shrink-0 overflow-hidden rounded-xl border-2 border-zinc-800">
                     <img src={int.image_url} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" alt={int.title} />
                   </div>
                   <div className="flex flex-col justify-center text-left font-black">
-                    <span className="text-[8px] bg-green-600 text-white px-2 py-0.5 rounded-full w-fit mb-1 italic font-black">GRUPO: {int.band_name}</span>
-                    <h3 className="text-sm md:text-xl font-franklin leading-tight uppercase group-hover:text-green-600 font-black">{int.title}</h3>
+                    <span className="text-[8px] bg-orange-500 text-white px-2 py-0.5 rounded-full w-fit mb-1 italic font-black">GRUPO: {int.band_name}</span>
+                    <h3 className="text-sm md:text-xl font-franklin leading-tight uppercase group-hover:text-orange-500 font-black">{int.title}</h3>
                     <p className="text-[10px] text-zinc-500 mt-1 font-bold italic line-clamp-1">{int.subtitle}</p>
                   </div>
                 </Link>
@@ -277,7 +277,7 @@ export default function Home() {
 
         <div className="flex flex-col lg:flex-row gap-8 md:gap-12">
           <div className="flex-1 space-y-8 md:space-y-12">
-            <section className="bg-green-600 text-white p-3 md:p-4 grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 items-center font-black uppercase italic shadow-[8px_8px_0px_0px_rgba(255,255,255,1)] rounded-2xl md:rounded-3xl">
+            <section className="bg-orange-500 text-white p-3 md:p-4 grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 items-center font-black uppercase italic shadow-[8px_8px_0px_0px_rgba(255,255,255,1)] rounded-2xl md:rounded-3xl">
               <div className="flex flex-col gap-1">
                 <span className="text-[8px] md:text-[10px] opacity-80 uppercase font-black">Dpto</span>
                 <select value={department} onChange={(e) => { setDepartment(e.target.value); applyFilters(allEvents, e.target.value, genre, ageRating, priceType); }} className="bg-black text-white p-2 border-2 border-white focus:outline-none font-bold text-[10px] md:text-xs uppercase rounded-xl font-black">
@@ -311,12 +311,12 @@ export default function Home() {
 
             <section className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-8 font-black">
               {loading ? (
-                <p className="col-span-full text-center text-3xl font-franklin animate-pulse text-green-600 uppercase font-black">Cargando...</p>
+                <p className="col-span-full text-center text-3xl font-franklin animate-pulse text-orange-500 uppercase font-black">Cargando...</p>
               ) : events.length === 0 ? (
                 <div className="col-span-full text-center py-20 border-4 border-dashed border-zinc-700 text-zinc-500 font-black uppercase rounded-3xl">No hay resultados...</div>
               ) : (
                 events.map((event) => (
-                  <div key={event.id} onClick={() => setSelectedEvent(event)} className="border-4 border-white p-2 md:p-4 hover:translate-x-1 hover:-translate-y-1 transition-all bg-zinc-950 shadow-[6px_6px_0px_0px_rgba(34,197,94,0.5)] flex flex-row md:flex-col items-center md:items-stretch gap-3 md:gap-4 group/card relative overflow-hidden cursor-pointer rounded-[24px] md:rounded-[32px] h-36 md:h-auto font-black">
+                  <div key={event.id} onClick={() => setSelectedEvent(event)} className="border-4 border-white p-2 md:p-4 hover:translate-x-1 hover:-translate-y-1 transition-all bg-zinc-950 shadow-[6px_6px_0px_0px_rgba(249, 115, 22,0.5)] flex flex-row md:flex-col items-center md:items-stretch gap-3 md:gap-4 group/card relative overflow-hidden cursor-pointer rounded-[24px] md:rounded-[32px] h-36 md:h-auto font-black">
                     
                     {event.suggestion_tag && (
                       <div className={`absolute top-2 -left-12 w-32 text-center py-0.5 font-black text-[7px] md:text-[10px] uppercase -rotate-45 z-30 border-y shadow-xl tracking-tighter ${getTagStyle(event.suggestion_tag)}`}>
@@ -332,14 +332,14 @@ export default function Home() {
 
                     <div className="flex-1 min-w-0 flex flex-col justify-center text-left space-y-0.5 md:space-y-2 font-black">
                       <div className="flex justify-between items-start">
-                        <h3 className="text-base md:text-2xl font-franklin leading-none truncate group-hover/card:text-green-600 transition-colors font-black">{event.band_name}</h3>
+                        <h3 className="text-base md:text-2xl font-franklin leading-none truncate group-hover/card:text-orange-500 transition-colors font-black">{event.band_name}</h3>
                       </div>
-                      <p className="font-black text-green-600 tracking-tighter uppercase text-[10px] md:text-sm">{formatDate(event.date)} - {formatTime(event.time)}hs</p>
+                      <p className="font-black text-orange-500 tracking-tighter uppercase text-[10px] md:text-sm">{formatDate(event.date)} - {formatTime(event.time)}hs</p>
                       <p className="text-[9px] md:text-[10px] uppercase tracking-tight text-zinc-400 font-bold leading-none md:leading-tight truncate">{event.venue}, {event.city}</p>
                       
                       <div className="flex gap-2 mt-1 flex-wrap">
-                         <span className="text-[7px] md:text-[8px] bg-white text-black px-2 py-0.5 uppercase font-black rounded-full border border-green-600">{renderPriceLabel(event)}</span>
-                         <span className="text-[7px] md:text-[8px] bg-green-600 text-white px-2 py-0.5 uppercase font-black rounded-full border border-white">{event.genre || 'Show'}</span>
+                         <span className="text-[7px] md:text-[8px] bg-white text-black px-2 py-0.5 uppercase font-black rounded-full border border-orange-500">{renderPriceLabel(event)}</span>
+                         <span className="text-[7px] md:text-[8px] bg-orange-500 text-white px-2 py-0.5 uppercase font-black rounded-full border border-white">{event.genre || 'Show'}</span>
                       </div>
                     </div>
                   </div>
@@ -351,14 +351,14 @@ export default function Home() {
           <aside className="lg:w-72 space-y-8 relative z-10 text-left uppercase font-black">
             <div className="grid grid-cols-2 lg:grid-cols-1 gap-4 lg:space-y-6 pt-4">
               {sidebarSponsors.map(ad => (
-                <div key={ad.id} onClick={() => setSelectedAd(ad)} className="block border-4 border-white bg-zinc-950 p-2 shadow-[8px_8px_0px_0px_rgba(34,197,94,0.3)] hover:-translate-x-1 transition-transform group cursor-pointer rounded-2xl">
+                <div key={ad.id} onClick={() => setSelectedAd(ad)} className="block border-4 border-white bg-zinc-950 p-2 shadow-[8px_8px_0px_0px_rgba(249, 115, 22,0.3)] hover:-translate-x-1 transition-transform group cursor-pointer rounded-2xl">
                   <div className="aspect-[4/5] overflow-hidden border-2 border-zinc-800 rounded-xl">
                     <img src={ad.image_url} alt="Sponsor" className="w-full h-full object-cover transition-all duration-500" />
                   </div>
                 </div>
               ))}
-              <Link href="/contact" className="block border-4 border-dashed border-zinc-700 p-8 text-center hover:border-green-600 hover:text-green-600 transition-colors group text-zinc-500 lg:col-span-1 col-span-full rounded-2xl font-black">
-                <span className="text-xs font-black uppercase group-hover:text-green-600 text-center block tracking-widest italic font-franklin">Publicá acá</span>
+              <Link href="/contact" className="block border-4 border-dashed border-zinc-700 p-8 text-center hover:border-orange-500 hover:text-orange-500 transition-colors group text-zinc-500 lg:col-span-1 col-span-full rounded-2xl font-black">
+                <span className="text-xs font-black uppercase group-hover:text-orange-500 text-center block tracking-widest italic font-franklin">Publicá acá</span>
               </Link>
             </div>
           </aside>
@@ -366,9 +366,9 @@ export default function Home() {
 
         {activeBottomAd && (
           <section className="pt-8 md:pt-12 font-black">
-             <div onClick={() => setSelectedAd(activeBottomAd)} className="cursor-pointer block w-full h-32 md:h-64 bg-zinc-950 border-4 md:border-8 border-white overflow-hidden shadow-[12px_12px_0px_0px_rgba(34,197,94,0.5)] group relative rounded-[32px] md:rounded-[40px]">
+             <div onClick={() => setSelectedAd(activeBottomAd)} className="cursor-pointer block w-full h-32 md:h-64 bg-zinc-950 border-4 md:border-8 border-white overflow-hidden shadow-[12px_12px_0px_0px_rgba(249, 115, 22,0.5)] group relative rounded-[32px] md:rounded-[40px]">
                 <img src={activeBottomAd.image_url} alt="Sponsor" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" />
-                <div className="absolute top-4 left-4 bg-black/80 text-white text-[8px] md:text-[10px] font-black px-4 py-1 border-2 border-green-600 uppercase tracking-widest rounded-full">Auspiciante Destacado</div>
+                <div className="absolute top-4 left-4 bg-black/80 text-white text-[8px] md:text-[10px] font-black px-4 py-1 border-2 border-orange-500 uppercase tracking-widest rounded-full">Auspiciante Destacado</div>
              </div>
         </section>
         )}
@@ -381,16 +381,16 @@ export default function Home() {
       {selectedEvent && (
           <div className="fixed inset-0 z-[200] flex items-center justify-center p-4 font-black overflow-y-auto">
             <div className="absolute inset-0 bg-black/90 backdrop-blur-sm" onClick={() => setSelectedEvent(null)} />
-            <div className="relative w-full max-w-4xl bg-zinc-900 border-4 md:border-8 border-white shadow-[20px_20px_0px_0px_rgba(34,197,94,0.5)] flex flex-col md:flex-row overflow-y-auto max-h-[90vh] rounded-[32px] md:rounded-[40px]">
-              <button onClick={() => setSelectedEvent(null)} className="absolute top-3 right-3 sm:top-4 sm:right-4 bg-green-600 text-white w-10 h-10 font-black text-xl border-4 border-white z-[210] hover:bg-black transition-colors text-center flex items-center justify-center rounded-full shadow-lg">X</button>
+            <div className="relative w-full max-w-4xl bg-zinc-900 border-4 md:border-8 border-white shadow-[20px_20px_0px_0px_rgba(249, 115, 22,0.5)] flex flex-col md:flex-row overflow-y-auto max-h-[90vh] rounded-[32px] md:rounded-[40px]">
+              <button onClick={() => setSelectedEvent(null)} className="absolute top-3 right-3 sm:top-4 sm:right-4 bg-orange-500 text-white w-10 h-10 font-black text-xl border-4 border-white z-[210] hover:bg-black transition-colors text-center flex items-center justify-center rounded-full shadow-lg">X</button>
               <div className="md:w-1/2 bg-zinc-800 border-b-4 md:border-b-0 md:border-r-4 border-white flex items-center justify-center p-4">
                 {selectedEvent.flyer_url ? <img src={selectedEvent.flyer_url} alt="Flyer" className="max-w-full h-auto shadow-2xl border-4 border-white rounded-2xl" /> : <p className="font-black italic text-zinc-600 uppercase text-center font-franklin">SIN FLYER</p>}
               </div>
               <div className="md:w-1/2 p-6 md:p-8 space-y-6 text-left font-black">
                 <div>
                   <div className="flex gap-2">
-                    <span className="bg-green-600 text-white px-2 py-1 text-[10px] font-black uppercase italic rounded-md shadow-sm">{selectedEvent.genre}</span>
-                    <span className="bg-white text-black px-2 py-1 text-[10px] font-black uppercase italic rounded-md shadow-sm border border-green-600">{selectedEvent.age_rating || 'ATP'}</span>
+                    <span className="bg-orange-500 text-white px-2 py-1 text-[10px] font-black uppercase italic rounded-md shadow-sm">{selectedEvent.genre}</span>
+                    <span className="bg-white text-black px-2 py-1 text-[10px] font-black uppercase italic rounded-md shadow-sm border border-orange-500">{selectedEvent.age_rating || 'ATP'}</span>
                   </div>
                   <h2 className="text-3xl md:text-5xl font-franklin tracking-tighter mt-2 text-white leading-none uppercase font-black">{selectedEvent.band_name}</h2>
                 </div>
@@ -405,7 +405,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="pt-6 border-t-2 border-zinc-800 space-y-4 font-black">
-                  <p className="text-2xl md:text-3xl font-franklin text-green-600 tracking-tighter uppercase">
+                  <p className="text-2xl md:text-3xl font-franklin text-orange-500 tracking-tighter uppercase">
                     {selectedEvent.is_suspended ? 'SUSPENDIDO' : selectedEvent.is_sold_out ? 'AGOTADO' : (selectedEvent.price_type === 'free' ? 'ENTRADA LIBRE' : selectedEvent.price_type === 'gorra' ? 'A LA GORRA' : selectedEvent.price_type === 'sobre' ? 'SOBRE ARTÍSTICO' : (selectedEvent.price_min && selectedEvent.price_max && selectedEvent.price_min !== selectedEvent.price_max) ? `$${selectedEvent.price_min} - $${selectedEvent.price_max}` : `$${selectedEvent.price_min || selectedEvent.price_max || '0'}`)}
                   </p>
                   
@@ -413,11 +413,11 @@ export default function Home() {
                     <div className="flex gap-4">
                       <button 
                         onClick={() => handleTicketAction(selectedEvent)} 
-                        className="flex-1 font-black uppercase py-4 text-lg md:text-xl border-4 border-black shadow-[6px_6px_0px_0px_rgba(255,255,255,1)] transition-all rounded-full bg-green-600 text-white hover:bg-white hover:text-black"
+                        className="flex-1 font-black uppercase py-4 text-lg md:text-xl border-4 border-black shadow-[6px_6px_0px_0px_rgba(255,255,255,1)] transition-all rounded-full bg-orange-500 text-white hover:bg-white hover:text-black"
                       >
                         {selectedEvent.ticket_type === 'whatsapp' ? 'WhatsApp' : 'Entradas'}
                       </button>
-                      <button onClick={() => shareOnWhatsApp(selectedEvent)} className="bg-green-600 text-white p-4 border-4 border-black shadow-[6px_6px_0px_0px_rgba(255,255,255,1)] hover:bg-black transition-colors flex items-center justify-center rounded-full shadow-lg">
+                      <button onClick={() => shareOnWhatsApp(selectedEvent)} className="bg-orange-500 text-white p-4 border-4 border-black shadow-[6px_6px_0px_0px_rgba(255,255,255,1)] hover:bg-black transition-colors flex items-center justify-center rounded-full shadow-lg">
                         <svg className="w-8 h-8 font-black" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
                       </button>
                     </div>
@@ -431,18 +431,18 @@ export default function Home() {
       {selectedAd && (
         <div className="fixed inset-0 z-[200] flex items-center justify-center p-4 pt-16 sm:pt-4 font-black overflow-y-auto">
           <div className="absolute inset-0 bg-black/95 backdrop-blur font-black" onClick={() => setSelectedAd(null)} />
-          <div className="relative max-w-2xl w-full bg-zinc-900 border-4 sm:border-8 border-white p-4 pt-12 sm:pt-4 shadow-[20px_20px_0px_0px_rgba(34,197,94,0.3)] text-center rounded-3xl sm:rounded-[40px] font-black my-auto">
+          <div className="relative max-w-2xl w-full bg-zinc-900 border-4 sm:border-8 border-white p-4 pt-12 sm:pt-4 shadow-[20px_20px_0px_0px_rgba(249, 115, 22,0.3)] text-center rounded-3xl sm:rounded-[40px] font-black my-auto">
             <button
               type="button"
               onClick={() => setSelectedAd(null)}
-              className="absolute top-3 right-3 sm:top-4 sm:right-4 bg-green-600 text-white w-10 h-10 sm:w-12 sm:h-12 font-black text-xl sm:text-2xl border-4 border-white hover:bg-black transition-colors z-[210] flex items-center justify-center shadow-xl rounded-full"
+              className="absolute top-3 right-3 sm:top-4 sm:right-4 bg-orange-500 text-white w-10 h-10 sm:w-12 sm:h-12 font-black text-xl sm:text-2xl border-4 border-white hover:bg-black transition-colors z-[210] flex items-center justify-center shadow-xl rounded-full"
             >
               X
             </button>
             <img src={selectedAd.image_url} alt="Sponsor" className="w-full h-auto border-4 border-zinc-800 shadow-2xl rounded-3xl" />
             <div className="p-4 sm:p-6 text-center space-y-4 font-black">
               {selectedAd.link && (
-                <a href={selectedAd.link} target="_blank" rel="noopener noreferrer" className="inline-block bg-white text-black px-8 sm:px-10 py-3 font-black uppercase hover:bg-green-600 hover:text-white transition-all shadow-[6px_6px_0px_0px_rgba(34,197,94,0.5)] rounded-full border-2 border-black italic">Visitar Web</a>
+                <a href={selectedAd.link} target="_blank" rel="noopener noreferrer" className="inline-block bg-white text-black px-8 sm:px-10 py-3 font-black uppercase hover:bg-orange-500 hover:text-white transition-all shadow-[6px_6px_0px_0px_rgba(249, 115, 22,0.5)] rounded-full border-2 border-black italic">Visitar Web</a>
               )}
             </div>
           </div>
@@ -452,17 +452,17 @@ export default function Home() {
       {showLogoModal && (
         <div className="fixed inset-0 z-[200] flex items-center justify-center p-4 pt-16 sm:pt-4 font-black overflow-y-auto">
           <div className="absolute inset-0 bg-black/95 backdrop-blur-xl font-black" onClick={() => setShowLogoModal(false)} />
-          <div className="relative max-w-lg w-full bg-zinc-900 border-4 sm:border-8 border-white p-4 pt-12 sm:pt-4 shadow-[30px_30px_0px_0px_rgba(34,197,94,0.5)] text-center rounded-3xl sm:rounded-[50px] font-black my-auto">
+          <div className="relative max-w-lg w-full bg-zinc-900 border-4 sm:border-8 border-white p-4 pt-12 sm:pt-4 shadow-[30px_30px_0px_0px_rgba(249, 115, 22,0.5)] text-center rounded-3xl sm:rounded-[50px] font-black my-auto">
             <button
               type="button"
               onClick={() => setShowLogoModal(false)}
-              className="absolute top-3 right-3 sm:top-4 sm:right-4 bg-green-600 text-white w-10 h-10 sm:w-14 sm:h-14 font-black text-xl sm:text-3xl border-4 border-white hover:bg-black transition-colors z-[210] flex items-center justify-center shadow-2xl rounded-full"
+              className="absolute top-3 right-3 sm:top-4 sm:right-4 bg-orange-500 text-white w-10 h-10 sm:w-14 sm:h-14 font-black text-xl sm:text-3xl border-4 border-white hover:bg-black transition-colors z-[210] flex items-center justify-center shadow-2xl rounded-full"
             >
               X
             </button>
-            <Image src="/logo-praxis.png" alt="Logo Grande" width={800} height={800} className="w-full h-auto rounded-3xl sm:rounded-[40px] border-4 border-zinc-800 shadow-2xl" />
+            <Image src="/logo-nuevo.png" alt="Logo Grande" width={800} height={800} className="w-full h-auto rounded-3xl sm:rounded-[40px] border-4 border-zinc-800 shadow-2xl" />
             <div className="p-4 sm:p-6 font-black">
-              <h3 className="text-3xl sm:text-4xl font-franklin text-green-600 leading-none">HQDanza</h3>
+              <h3 className="text-3xl sm:text-4xl font-franklin text-orange-500 leading-none">HQDanza</h3>
               <p className="text-xs font-black uppercase tracking-widest text-white/60 mt-2 italic">Portal de danza y entrevistas</p>
             </div>
           </div>
@@ -471,7 +471,7 @@ export default function Home() {
       <style jsx global>{`
         .custom-scrollbar::-webkit-scrollbar { width: 4px; }
         .custom-scrollbar::-webkit-scrollbar-track { background: #1a1a1a; }
-        .custom-scrollbar::-webkit-scrollbar-thumb { background: #22c55e; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #f97316; }
       `}</style>
     </div>
   );

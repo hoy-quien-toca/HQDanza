@@ -31,7 +31,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col relative bg-zinc-800">
         <div className="global-watermark">
-          <Image src="/logo-praxis.png" alt="HQDanza" width={1000} height={1000} className="" priority />
+          <Image src="/logo-nuevo.png" alt="HQDanza" width={1000} height={1000} className="" priority />
         </div>
         <div className="content-wrapper flex flex-col flex-1">
           {children}
